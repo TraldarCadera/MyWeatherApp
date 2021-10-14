@@ -1,8 +1,8 @@
 package com.example.myweatherapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myweatherapp.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.example.myweatherapp.framework.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
