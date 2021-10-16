@@ -3,4 +3,7 @@
     <string name="temperature_label">Температура</string>
     <string name="feels_like_label">Ощущается как</string>
     <string name="city_coordinates">lt/ln: %s, %s</string>
+    <string name="change_cities_list">Поменять список городов</string>
+    <string name="error">Ошибка</string>
+    <string name="reload">Обновить</string>
 </resources>
