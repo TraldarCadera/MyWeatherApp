@@ -11,7 +11,7 @@ import com.example.myweatherapp.databinding.MainFragmentBinding
 import com.example.myweatherapp.framework.adapter.MainFragmentAdapter
 import com.example.myweatherapp.framework.ui.details.DetailsFragment
 import com.example.myweatherapp.model.entities.Weather
-import com.google.android.material.snackbar.Snackbar
+import com.example.myweatherapp.showSnackBar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -22,7 +22,6 @@ class MainFragment : Fragment() {
 
     private var adapter: MainFragmentAdapter? = null
     private var isDataSetRus: Boolean = true
-
 
 
     override fun onCreateView(
@@ -87,10 +86,12 @@ class MainFragment : Fragment() {
             }
             is AppState.Error -> {
                 mainFragmentLoadingLayout.visibility = View.GONE
-                Snackbar
-                    .make(binding.mainFragmentFAB, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
-                    .setAction(getString(R.string.reload)) { viewModel.getWeatherFromLocalSourceRus() }
-                    .show()
+                mainFragmentFAB.showSnackBar(
+                    getString(R.string.error),
+                    getString(R.string.reload)
+                ) {
+                    viewModel.getWeatherFromLocalSourceRus()
+                }
             }
         }
     }
