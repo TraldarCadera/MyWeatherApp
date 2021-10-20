@@ -6,4 +6,6 @@
     <string name="change_cities_list">Поменять список городов</string>
     <string name="error">Ошибка</string>
     <string name="reload">Обновить</string>
+    <string name="pressure_label">Атмосферное давление</string>
+    <string name="error_happened">Произошло что-то непонятное</string>
 </resources>
