@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.myweatherapp.AppState
 import com.example.myweatherapp.R
 import com.example.myweatherapp.databinding.DetailsFragmentBinding
 import com.example.myweatherapp.model.entities.Weather
@@ -23,6 +24,7 @@ class DetailsFragment : Fragment() {
 
     private var _binding: DetailsFragmentBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: DetailsViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,18 +36,38 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments?.getParcelable<Weather>(BUNDLE_EXTRA)?.let { it
-        with(binding){
-            val city =  it.city
-            cityName.text = city.city
-            cityCoordinates.text = String.format(
-                getString(R.string.city_coordinates),
-                city.lat.toString(),
-                city.lon.toString()
-            )
-            temperatureValue.text = it.temperature.toString()
-            feelsLikeValue.text = it.feelsLike.toString()
-        }}
+        arguments?.getParcelable<Weather>(BUNDLE_EXTRA)?.let {
+            with(binding) {
+                cityName.text = it.city.city
+                cityCoordinates.text = String.format(
+                    getString(R.string.city_coordinates),
+                    it.city.lon.toString(),
+                    it.city.lat.toString()
+                )
+                viewModel.liveDataToObserve.observe(viewLifecycleOwner, { appState ->
+                    when (appState) {
+                        is AppState.Error -> {
+                            mainView.visibility = View.INVISIBLE
+                            loadingLayout.visibility = View.GONE
+                            errorTV.visibility = View.VISIBLE
+                        }
+                        AppState.Loading -> {
+                            mainView.visibility = View.INVISIBLE
+                            binding.loadingLayout.visibility = View.VISIBLE
+                        }
+                        is AppState.Success -> {
+                            loadingLayout.visibility = View.GONE
+                            mainView.visibility = View.VISIBLE
+                            temperatureValue.text = appState.weatherData[0].temperature.toString()
+                            feelsLikeValue.text = appState.weatherData[0].feelsLike.toString()
+                            weatherCondition.text = appState.weatherData[0].condition
+                            pressureValue.text = appState.weatherData[0].pressure.toString()
+                        }
+                    }
+                })
+                viewModel.loadData(it.city.lat, it.city.lon)
+            }
+        }
     }
 
     override fun onDestroyView() {
@@ -62,6 +84,7 @@ class DetailsFragment : Fragment() {
         )
         temperatureValue.text = weatherData.temperature.toString()
         feelsLikeValue.text = weatherData.feelsLike.toString()
+        pressureValue.text = weatherData.pressure.toString()
     }
 
 }

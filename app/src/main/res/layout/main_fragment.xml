@@ -22,7 +22,8 @@
         android:layout_marginBottom="@dimen/medium_dimen"
         android:contentDescription="@string/change_cities_list"
         android:src="@drawable/ic_russia"
-        android:tint="@null"
+        app:tint="@null"
+        app:maxImageSize="@dimen/max_image_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
