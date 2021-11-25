@@ -8,4 +8,5 @@
     <string name="reload">Обновить</string>
     <string name="pressure_label">Атмосферное давление</string>
     <string name="error_happened">Произошло что-то непонятное</string>
+    <string name="history">История</string>
 </resources>

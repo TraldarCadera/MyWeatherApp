@@ -7,7 +7,6 @@ data class FactDTO(
 
     @SerializedName("feels_like")
     val feelsLike: Int?,
-
     val pressure_mm: Int?,
     val condition: String?
 )
