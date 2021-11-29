@@ -16,7 +16,7 @@ object ApiUtils {
         httpClient.addInterceptor { chain ->
             val original = chain.request()
             val request = original.newBuilder()
-                .header("X-Yandex-API-Key", "64601cf2-c0b5-4425-b2ad-9194a29d3418")
+                .header("X-Yandex-API-Key", "f9893fc2-71b8-4226-8759-c12129e6a74a")
                 .method(original.method(), original.body())
                 .build()
 
