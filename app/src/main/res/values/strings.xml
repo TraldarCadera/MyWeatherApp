@@ -1,4 +1,5 @@
 <resources>
+    <string translatable="false" name="google_maps_key">AIzaSyCkoVC3hEBuvZMmoTc7grrbU-Cbttv24po</string>
     <string name="app_name">MyWeatherApp</string>
     <string name="temperature_label">Температура</string>
     <string name="feels_like_label">Ощущается как</string>
@@ -11,4 +12,28 @@
     <string name="history">История</string>
     <string name="content_provider">Content provider</string>
     <string name="need_permission_to_read_contacts">Нужно предоставить права для чтения контактов</string>
+    <string name="dialog_button_close">Закрыть</string>
+    <string name="dialog_title_no_gps">Доступ к геолокации закрыт</string>
+    <string name="dialog_message_no_gps">Разрешите доступ к геолокации, если хотите узнать погоду текущего места</string>
+    <string name="dialog_title_gps_turned_off">GPS отключён</string>
+    <string name="dialog_message_last_location_unknown">Местонахождение неизвестно. Включите GPS, если хотите получить погоду по текущему адресу</string>
+    <string name="dialog_message_last_known_location">Показана последняя известная локация. Включите GPS, если хотите обновить местонахождение</string>
+    <string name="dialog_rationale_title">Доступ к геолокации</string>
+    <string name="dialog_rationale_message">Объяснение</string>
+    <string name="dialog_rationale_give_access">Предоставить доступ</string>
+    <string name="dialog_rationale_decline">Не надо</string>
+    <string name="dialog_address_title">Ваш адрес</string>
+    <string name="dialog_address_get_weather">Узнать погоду</string>
+    <string name="looks_like_location_disabled">Возможно, выключена функция определения местоположения</string>
+    <string name="map_mode">Режим карты</string>
+    <string name="normal">Нормальный</string>
+    <string name="satellites">Спутники</string>
+    <string name="terrain">Схема</string>
+    <string name="traffic">Трафик</string>
+    <string name="enter_query">Введите запрос</string>
+    <string name="search">Поиск</string>
+    <string name="description_FAB_location">Определение местоположения</string>
+    <string name="details_image_description">Картинка</string>
+    <string name="map">Карта</string>
+    <string name="start_marker">Стартовый маркер</string>
 </resources>

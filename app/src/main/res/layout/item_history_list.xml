@@ -11,14 +11,14 @@
         android:id="@+id/recyclerViewItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="@dimen/item_padding_5dp"
+        android:layout_marginTop="@dimen/item_padding_5dp"
         tools:text="Moscow 15C" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="@dimen/item_height_1dp"
+        android:layout_marginTop="@dimen/item_padding_5dp"
         android:background="@android:color/darker_gray" />
 
 </LinearLayout>

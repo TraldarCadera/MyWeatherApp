@@ -13,7 +13,6 @@ data class HistoryEntity(
     companion object {
         const val ID = "id"
         const val CITY = "city"
-//        const val CONDITION = "condition"
         const val TEMPERATURE = "temperature"
     }
 }
