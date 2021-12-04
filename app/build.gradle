@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -51,6 +52,7 @@ dependencies {
     implementation 'io.coil-kt:coil:1.4.0'
     implementation 'androidx.room:room-runtime:2.4.0-beta02'
     implementation 'androidx.room:room-ktx:2.4.0-beta02'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
     kapt 'androidx.room:room-compiler:2.4.0-beta02'
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
 
