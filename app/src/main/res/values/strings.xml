@@ -9,4 +9,6 @@
     <string name="pressure_label">Атмосферное давление</string>
     <string name="error_happened">Произошло что-то непонятное</string>
     <string name="history">История</string>
+    <string name="content_provider">Content provider</string>
+    <string name="need_permission_to_read_contacts">Нужно предоставить права для чтения контактов</string>
 </resources>
