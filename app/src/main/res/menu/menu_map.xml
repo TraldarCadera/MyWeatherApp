@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/menu_map_mode"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="@string/map_mode"
+        tools:ignore="AppCompatResource">
+
+        <menu>
+            <item
+                android:id="@+id/menu_map_mode_normal"
+                android:orderInCategory="1"
+                android:title="@string/normal"
+                tools:ignore="AppCompatResource" />
+
+            <item
+                android:id="@+id/menu_map_mode_satellite"
+                android:orderInCategory="2"
+                android:title="@string/satellites"
+                tools:ignore="AppCompatResource" />
+
+            <item
+                android:id="@+id/menu_map_mode_terrain"
+                android:orderInCategory="2"
+                android:showAsAction="never"
+                android:title="@string/terrain"
+                tools:ignore="AppCompatResource" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/menu_map_traffic"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:orderInCategory="2"
+        android:showAsAction="ifRoom"
+        android:title="@string/traffic"
+        tools:ignore="AppCompatResource" />
+</menu>

@@ -12,7 +12,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class ForegoundService: Service(), CoroutineScope by MainScope() {
+class ForegroundService: Service(), CoroutineScope by MainScope() {
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
@@ -68,12 +68,12 @@ class ForegoundService: Service(), CoroutineScope by MainScope() {
         const val INTENT_SERVICE_DATA = "INTENT_SERVICE_DATA"
 
         fun start(context: Context) {
-            val usualServiceIntent = Intent(context, ForegoundService::class.java)
+            val usualServiceIntent = Intent(context, ForegroundService::class.java)
             context.startService(usualServiceIntent)
         }
 
         fun stop(context: Context) {
-            val usualServiceIntent = Intent(context, ForegoundService::class.java)
+            val usualServiceIntent = Intent(context, ForegroundService::class.java)
             context.stopService(usualServiceIntent)
         }
     }
